@@ -14,7 +14,7 @@ public class Fahrzeugbestand {
 	// nur 1 Bestand in der Anwendung -> Singleton
 
 	private Fahrzeugbestand() {
-		fahrzeuge.add(new Fahrzeug("Ford", 2010));
+		fahrzeuge.add(new Fahrzeug("Ford<b>test</b>", 2010));
 		fahrzeuge.add(new Fahrzeug("Opel", 2018));
 	}
 
