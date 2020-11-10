@@ -1,4 +1,4 @@
-package de.ars.demo;
+package de.ars.demo.entity;
 
 public class Fahrzeug {
 

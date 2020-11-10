@@ -1,14 +1,16 @@
-package de.ars.demo;
+package de.ars.demo.boundary;
 
 import java.io.IOException;
 import java.util.Collection;
-import java.util.LinkedList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import de.ars.demo.control.Fahrzeugbestand;
+import de.ars.demo.entity.Fahrzeug;
 
 @WebServlet("/fahrzeuge")
 public class FahrzeugdatenAnzeigeServlet extends HttpServlet {
@@ -18,9 +20,7 @@ public class FahrzeugdatenAnzeigeServlet extends HttpServlet {
 		
 		// Logik, z.B. DB-Zugriff o.Ä.
 		
-		Collection<Fahrzeug> fahrzeuge = new LinkedList<>();
-		fahrzeuge.add(new Fahrzeug("Ford", 2010));
-		fahrzeuge.add(new Fahrzeug("Opel", 2018));
+		Collection<Fahrzeug> fahrzeuge = Fahrzeugbestand.getInstance().getFahrzeuge();
 		
 		// Antwort generieren in JSP, kein PrintWriter!
 		request.setAttribute("fz", fahrzeuge);
