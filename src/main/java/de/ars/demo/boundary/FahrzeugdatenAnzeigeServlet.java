@@ -24,6 +24,7 @@ public class FahrzeugdatenAnzeigeServlet extends HttpServlet {
 		
 		// Antwort generieren in JSP, kein PrintWriter!
 		request.setAttribute("fz", fahrzeuge);
+		request.setAttribute("pageTitle", "Anzeige aller Fahrzeuge");
 		request.getRequestDispatcher("/displayFahrzeuge.jsp")
 			.forward(request, response);
 		

@@ -2,6 +2,7 @@ package de.ars.demo.entity;
 
 public class Fahrzeug {
 
+	private int id;
 	private String hersteller;
 	private int baujahr;
 	
@@ -9,8 +10,9 @@ public class Fahrzeug {
 		super();
 	}
 
-	public Fahrzeug(String hersteller, int baujahr) {
+	public Fahrzeug(int id, String hersteller, int baujahr) {
 		super();
+		this.id = id;
 		this.hersteller = hersteller;
 		this.baujahr = baujahr;
 	}
@@ -26,6 +28,14 @@ public class Fahrzeug {
 	}
 	public void setBaujahr(int baujahr) {
 		this.baujahr = baujahr;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 }

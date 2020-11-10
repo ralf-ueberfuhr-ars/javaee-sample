@@ -39,6 +39,7 @@ public class FahrzeugdatenSuchenServlet extends HttpServlet {
 
 			// Antwort generieren in JSP, kein PrintWriter!
 			request.setAttribute("fz", suchErgebnisse);
+			request.setAttribute("pageTitle", "Suchergebnisse für '" + suchtext + "'");
 			request.getRequestDispatcher("/displayFahrzeuge.jsp").forward(request, response);
 		}
 

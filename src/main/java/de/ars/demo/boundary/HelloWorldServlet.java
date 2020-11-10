@@ -3,7 +3,6 @@ package de.ars.demo.boundary;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import javax.annotation.PostConstruct;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,18 +19,7 @@ public class HelloWorldServlet extends HttpServlet {
 	 *  - doGet WIRD aufgerufen (passiv) -> wann? welche parameter? welcher rückgabewert?
 	 *  -> Objekt WIRD erzeugt: wann? wieviele? -> max. 1
 	 *  -> Instanzvariablen im Servlet nur einmalig initialisieren, ansonsten nur lesen
-	 * 
 	 */
-
-	@Override
-	public void init() throws ServletException {
-		// Initialisierung (auch Instanzvariablen)
-	}
-	
-	@PostConstruct
-	public void initToo() {
-		// auch Initialisieren
-	}
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
