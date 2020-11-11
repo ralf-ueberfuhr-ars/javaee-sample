@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Comparator;
 import java.util.Optional;
 
+import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,6 +18,9 @@ import de.ars.demo.entity.Fahrzeug;
 public class FahrzeugdatenAnlegenServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	@Inject
+	private Fahrzeugbestand bestand;
+
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -26,7 +30,6 @@ public class FahrzeugdatenAnlegenServlet extends HttpServlet {
 		// Konvertierung / Validierung
 		int baujahr = Integer.valueOf(baujahrParam);
 
-		Fahrzeugbestand bestand = (Fahrzeugbestand) getServletContext().getAttribute("fahrzeuge");
 		// neue ID finden
 		Optional<Integer> max = bestand.getFahrzeuge().stream().map(Fahrzeug::getId).max(Comparator.naturalOrder());
 		// Fahrzeug einfügen
