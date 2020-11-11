@@ -24,7 +24,7 @@ public class FahrzeugHandlingInterceptor implements Serializable { // für Sessi
 				if (f.getBaujahr() < 1900) {
 					throw new IllegalArgumentException("Fahrzeuge mit Baujahr vor 1900 sind nicht zulässig.");
 				} else {
-					System.out.printf("Fahrzeug mit Baujahr %d an Methoden '%s' übergeben.", f.getBaujahr(),
+					System.out.printf("Fahrzeug mit Baujahr %d an Methoden '%s' übergeben.%n", f.getBaujahr(),
 							ic.getMethod().getName());
 				}
 			}
