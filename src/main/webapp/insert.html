@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Neues Fahrzeug</title>
+	<style type="text/css">
+		label {
+			width: 5em;
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<h1>Fahrzeug erstellen</h1>
+	<form action="fahrzeugAnlegen" method="post">
+		<p>
+			<label for="hersteller">Hersteller:</label>
+			<input id="hersteller" name="hersteller" type="text" />
+		</p>
+		<p>
+			<label for="baujahr">Baujahr:</label>
+			<input id="baujahr" name="baujahr" type="number" />
+		</p>
+		<input type="submit" />
+	</form>
+</body>
+</html>
