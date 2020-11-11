@@ -20,7 +20,8 @@ public class FahrzeugdatenAnzeigeServlet extends HttpServlet {
 		
 		// Logik, z.B. DB-Zugriff o.Ä.
 		
-		Collection<Fahrzeug> fahrzeuge = Fahrzeugbestand.getInstance().getFahrzeuge();
+		Fahrzeugbestand bestand = (Fahrzeugbestand) getServletContext().getAttribute("fahrzeuge");
+		Collection<Fahrzeug> fahrzeuge = bestand.getFahrzeuge();
 		
 		// Antwort generieren in JSP, kein PrintWriter!
 		request.setAttribute("fz", fahrzeuge);

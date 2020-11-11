@@ -32,7 +32,8 @@ public class FahrzeugdatenSuchenServlet extends HttpServlet {
 
 			// Logik, z.B. DB-Zugriff o.Ä.
 
-			Collection<Fahrzeug> fahrzeuge = Fahrzeugbestand.getInstance().getFahrzeuge();
+			Fahrzeugbestand bestand = (Fahrzeugbestand) getServletContext().getAttribute("fahrzeuge");
+			Collection<Fahrzeug> fahrzeuge = bestand.getFahrzeuge();
 			Collection<Fahrzeug> suchErgebnisse = fahrzeuge.stream()
 					.filter(fz -> fz.getHersteller().toLowerCase().contains(suchtext.toLowerCase()))
 					.collect(Collectors.toList());
