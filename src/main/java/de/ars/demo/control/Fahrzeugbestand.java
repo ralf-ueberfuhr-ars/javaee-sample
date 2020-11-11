@@ -3,16 +3,16 @@ package de.ars.demo.control;
 import java.util.Collection;
 import java.util.LinkedList;
 
+import javax.enterprise.context.ApplicationScoped;
+
 import de.ars.demo.entity.Fahrzeug;
 
+@ApplicationScoped
 public class Fahrzeugbestand {
 
 	private final Collection<Fahrzeug> fahrzeuge = new LinkedList<>();
 
 	// nur 1 Bestand in der Anwendung -> Singleton
-
-	Fahrzeugbestand() {
-	}
 
 	public Collection<Fahrzeug> getFahrzeuge() {
 		return fahrzeuge;

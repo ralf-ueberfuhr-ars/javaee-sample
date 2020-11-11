@@ -1,20 +1,31 @@
 package de.ars.demo.entity;
 
-public class Fahrzeug {
+import java.io.Serializable;
 
+public class Fahrzeug implements Serializable {
+
+	/*
+	 * Reihenfolge der Injections
+	 *  1. Hersteller (C)
+	 *  2. Motor (F)
+	 *  3. Reifen (M)
+	 */
+	
+	private static final long serialVersionUID = 1L;
 	private int id;
 	private String hersteller;
 	private int baujahr;
+	//private Motor motor; // Field Injection
 	
-	public Fahrzeug() {
-		super();
-	}
-
-	public Fahrzeug(int id, String hersteller, int baujahr) {
+	public Fahrzeug(int id, String hersteller, int baujahr) { // Constructor Injection
 		super();
 		this.id = id;
 		this.hersteller = hersteller;
 		this.baujahr = baujahr;
+	}
+	
+	public void fahre(Reifen reifen) { // Method Injection
+		
 	}
 	
 	public String getHersteller() {

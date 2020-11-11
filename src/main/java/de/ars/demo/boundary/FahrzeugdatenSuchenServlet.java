@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
+import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,6 +17,9 @@ import de.ars.demo.entity.Fahrzeug;
 @WebServlet("/fahrzeugsuche")
 public class FahrzeugdatenSuchenServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+
+	@Inject
+	private Fahrzeugbestand bestand;
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -32,7 +36,6 @@ public class FahrzeugdatenSuchenServlet extends HttpServlet {
 
 			// Logik, z.B. DB-Zugriff o.Ä.
 
-			Fahrzeugbestand bestand = (Fahrzeugbestand) getServletContext().getAttribute("fahrzeuge");
 			Collection<Fahrzeug> fahrzeuge = bestand.getFahrzeuge();
 			Collection<Fahrzeug> suchErgebnisse = fahrzeuge.stream()
 					.filter(fz -> fz.getHersteller().toLowerCase().contains(suchtext.toLowerCase()))
