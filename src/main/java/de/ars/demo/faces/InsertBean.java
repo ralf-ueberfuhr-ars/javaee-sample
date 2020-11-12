@@ -3,16 +3,20 @@ package de.ars.demo.faces;
 import java.util.Comparator;
 import java.util.Optional;
 
-import javax.faces.annotation.ManagedProperty;
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 import de.ars.demo.control.Fahrzeugbestand;
 import de.ars.demo.entity.Fahrzeug;
 
+@RequestScoped
+@Named("insertBean")
 public class InsertBean {
 
-	@ManagedProperty("#{eingabeFahrzeug}")
+	@Inject
 	Fahrzeug fahrzeug;
-	@ManagedProperty("#{fahrzeuge}")
+	@Inject
 	Fahrzeugbestand bestand;
 	
 	public String insert() {

@@ -2,11 +2,15 @@ package de.ars.demo.entity;
 
 import java.io.Serializable;
 
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+@RequestScoped
+@Named("eingabeFahrzeug")
 public class Fahrzeug implements Serializable {
 
 	/*
@@ -27,6 +31,10 @@ public class Fahrzeug implements Serializable {
 	@Min(1900)
 	private int baujahr;
 	//private Motor motor; // Field Injection
+	
+	public Fahrzeug() {
+		
+	}
 	
 	public Fahrzeug(int id, String hersteller, int baujahr) { // Constructor Injection
 		super();
