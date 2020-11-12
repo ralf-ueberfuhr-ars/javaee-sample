@@ -12,10 +12,10 @@
 
 	<h:form>
 		Hersteller: <h:inputText id="hersteller" value="#{eingabeFahrzeug.hersteller}" /><br/>
-		<h:message for="hersteller"/>
-		Baujahr: <h:inputText  id="baujahr" value="#{eingabeFahrzeug.baujahr}" />
-		<h:message for="baujahr"/>
-		<h:commandButton action="#{insertBean.insert}" />
+		<h:message for="hersteller"/><br/>
+		Baujahr: <h:inputText  id="baujahr" value="#{eingabeFahrzeug.baujahr}" /><br/>
+		<h:message for="baujahr"/><br/>
+		<h:commandButton action="#{insertBean.insert}" value="Einfügen" /><br/>
 	</h:form>
 
 </h:body>

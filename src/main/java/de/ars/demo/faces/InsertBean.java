@@ -19,11 +19,12 @@ public class InsertBean {
 	@Inject
 	Fahrzeugbestand bestand;
 	
-	public String insert() {
+	public String insert() { // Bean Validation automatisch
 		// ID setzen
 		Optional<Integer> max = bestand.getFahrzeuge().stream().map(Fahrzeug::getId).max(Comparator.naturalOrder());
-		fahrzeug.setId(max.orElse(0) + 1);
-		bestand.add(fahrzeug);
+		// Kopie erstellen, da CDI Managed Bean Proxy -> bei Validierung in Interceptor gibt es Probleme
+		Fahrzeug newF = new Fahrzeug(max.orElse(0) + 1, fahrzeug.getHersteller(), fahrzeug.getBaujahr());
+		bestand.add(newF);
 		return "anzeige";
 	}
 	
