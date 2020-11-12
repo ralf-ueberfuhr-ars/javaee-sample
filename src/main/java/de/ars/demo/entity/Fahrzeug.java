@@ -1,10 +1,15 @@
 package de.ars.demo.entity;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+@SuppressWarnings("deprecation")
+@RequestScoped
+@ManagedBean(name = "eingabeFahrzeug")
 public class Fahrzeug {
 
 	@Min(1)
