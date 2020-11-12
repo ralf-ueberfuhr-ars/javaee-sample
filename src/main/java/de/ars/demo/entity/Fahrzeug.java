@@ -1,9 +1,19 @@
 package de.ars.demo.entity;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
 public class Fahrzeug {
 
+	@Min(1)
 	private int id;
+	@Size(min = 2)
+	@NotNull
+	@Pattern(regexp = "[A-Z].*")
 	private String hersteller;
+	@Min(1900)
 	private int baujahr;
 	
 	public Fahrzeug() {
