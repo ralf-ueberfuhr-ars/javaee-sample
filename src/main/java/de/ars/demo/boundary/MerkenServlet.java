@@ -41,7 +41,7 @@ public class MerkenServlet extends HttpServlet {
 			}
 			// ID-Parameter als Integer
 			Set<Integer> idSet = Arrays.stream(ids).map(Integer::valueOf).collect(Collectors.toSet());
-			Fahrzeugbestand bestand = (Fahrzeugbestand) getServletContext().getAttribute("fahrzeuge");
+			Fahrzeugbestand bestand = (Fahrzeugbestand) getServletContext().getAttribute("bestand");
 			// alles aus bestand, dessen ID in idSet (=Parameter) zu finden ist, wird in die Merkliste gepackt.
 			bestand.getFahrzeuge().stream().filter(f -> idSet.contains(f.getId())).forEach(merkliste::add);
 		}

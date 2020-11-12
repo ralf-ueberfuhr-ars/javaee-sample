@@ -21,7 +21,7 @@ public class FahrzeugbestandInitializer implements ServletContextListener {
 		bestand.add(new Fahrzeug(2, "Opel", 2018));
 		bestand.add(new Fahrzeug(3, "VW", 2015));
 
-		sc.setAttribute("fahrzeuge", bestand);
+		sc.setAttribute("bestand", bestand);
 				
 		System.out.println("Fahrzeugbestand initialisiert");
 	}

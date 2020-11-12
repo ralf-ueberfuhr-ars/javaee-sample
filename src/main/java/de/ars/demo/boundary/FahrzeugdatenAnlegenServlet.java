@@ -48,7 +48,7 @@ public class FahrzeugdatenAnlegenServlet extends HttpServlet {
 //			return;
 //		}
 
-		Fahrzeugbestand bestand = (Fahrzeugbestand) getServletContext().getAttribute("fahrzeuge");
+		Fahrzeugbestand bestand = (Fahrzeugbestand) getServletContext().getAttribute("bestand");
 		// neue ID finden
 		Optional<Integer> max = bestand.getFahrzeuge().stream().map(Fahrzeug::getId).max(Comparator.naturalOrder());
 		// Fahrzeug erstellen
