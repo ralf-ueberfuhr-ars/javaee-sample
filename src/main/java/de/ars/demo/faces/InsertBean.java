@@ -27,6 +27,5 @@ public class InsertBean {
 		bestand.add(newF);
 		return "anzeige";
 	}
-	
-	
+
 }
