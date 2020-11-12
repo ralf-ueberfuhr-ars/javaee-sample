@@ -1,0 +1,23 @@
+<html 
+   xmlns="https://www.w3.org/1999/xhtml" 
+   xmlns:c="http://java.sun.com/jsp/jstl/core"
+   xmlns:f="http://java.sun.com/jsf/core" 
+   xmlns:h="http://java.sun.com/jsf/html"
+>
+<head>
+
+</head>
+<h:body>
+	<h1><h:outputText id="pageTitle" value="Erzeugen mit JSF" /></h1>
+
+	<h:form>
+		Hersteller: <h:inputText id="hersteller" value="#{eingabeFahrzeug.hersteller}" /><br/>
+		<h:message for="hersteller"/>
+		Baujahr: <h:inputText  id="baujahr" value="#{eingabeFahrzeug.baujahr}" />
+		<h:message for="baujahr"/>
+		<h:commandButton action="#{insertBean.insert}" />
+	</h:form>
+
+</h:body>
+
+</html>

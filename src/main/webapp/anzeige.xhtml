@@ -1,0 +1,30 @@
+<html 
+   xmlns="https://www.w3.org/1999/xhtml" 
+   xmlns:c="http://java.sun.com/jsp/jstl/core"
+   xmlns:f="http://java.sun.com/jsf/core" 
+   xmlns:h="http://java.sun.com/jsf/html"
+>
+<head>
+
+</head>
+<h:body>
+	<h1><h:outputText id="pageTitle" value="Anzeige mit JSF" /></h1>
+
+	<h:dataTable value="#{fahrzeuge}" var="f" >
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="Hersteller" />
+			</f:facet>
+			<h:outputText value="#{f.hersteller}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="Baujahr" />
+			</f:facet>
+			<h:outputText value="#{f.baujahr}" />
+		</h:column>
+	</h:dataTable>
+
+</h:body>
+
+</html>
