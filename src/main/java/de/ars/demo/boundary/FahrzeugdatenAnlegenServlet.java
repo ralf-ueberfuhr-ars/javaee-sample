@@ -23,8 +23,25 @@ public class FahrzeugdatenAnlegenServlet extends HttpServlet {
 
 		String hersteller = request.getParameter("hersteller");
 		String baujahrParam = request.getParameter("baujahr");
+		
+		if(null == hersteller || null == baujahrParam || hersteller.isEmpty() || baujahrParam.isEmpty() ) {
+			response.sendError(HttpServletResponse.SC_BAD_REQUEST);
+			return;
+		}
+		
 		// Konvertierung / Validierung
-		int baujahr = Integer.valueOf(baujahrParam);
+		int baujahr;
+		try {
+			baujahr = Integer.valueOf(baujahrParam);
+		} catch (NumberFormatException e) {
+			response.sendError(HttpServletResponse.SC_BAD_REQUEST);
+			return;
+		}
+		
+		if(baujahr<1900) {
+			response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Baujahr must be gte 1900.");
+			return;
+		}
 
 		Fahrzeugbestand bestand = (Fahrzeugbestand) getServletContext().getAttribute("fahrzeuge");
 		// neue ID finden
