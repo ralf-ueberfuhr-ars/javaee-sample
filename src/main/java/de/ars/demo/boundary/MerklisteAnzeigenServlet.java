@@ -32,7 +32,7 @@ public class MerklisteAnzeigenServlet extends HttpServlet {
 		request.setAttribute("fz", merkliste); // null ist okay
 		request.setAttribute("pageTitle", "Merkliste");
 		request.setAttribute("merkenFormDisabled", true);
-		request.getRequestDispatcher("/displayFahrzeuge.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/jsp/displayFahrzeuge.jsp").forward(request, response);
 
 	}
 
